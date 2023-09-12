@@ -1,5 +1,16 @@
 console.log('hello world');
-for(var i=1;i<=10;i++)
-{
-    console.log(i);
+// -------------------
+let multiply=(a,b)=>a*b;
+console.log(multiply(89,2));
+// --------------
+const student={
+    name : 'mayur',
+    Age :  6,
+    class : "7th",
+    greet(){
+        console.log(`My name is ${this.name} i am in ${this.class}`);
+    }
+    
+    
 }
+student.greet();
