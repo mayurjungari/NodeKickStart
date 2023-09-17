@@ -46,12 +46,14 @@ if (reqUrl === '/') {
                 res.end('Error saving message');
             } else {
                 res.statusCode = 302;
+
                 res.setHeader('Location', '/');
                 return res.end();
             }
         });
     });
 } else {
+    
     res.write('Welcome home');
     res.end();
 }
