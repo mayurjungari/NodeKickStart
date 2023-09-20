@@ -1,12 +1,22 @@
-const http = require('http');
-const routes=require('./route')
 
-
-const server = http.createServer((req, res) => {
-   
-
+const express = require('express');
+const app=express();
+app.use((req,res,next)=>
+{
+    console.log("in the middle ware")
+    next();
     
-});
+})
+app.use((req,res,next)=>
+{
+    console.log("in the another middle ware")
+    res.send('<h1>Hello from express</h1>')
+    
+})
 
-server.listen(4000);
+
+
+
+
+app.listen(4000);
 
