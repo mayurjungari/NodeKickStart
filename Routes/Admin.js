@@ -1,20 +1,14 @@
-const express=require('express');
-const routers=express.Router();
+const express = require('express');
+const path=require('path')
+const router = express.Router();
 
+router.get('/add-product', (req, res) => {
+  res.sendFile(path.join(__dirname,'../','Views','add-product.html'))
+});
 
-routers.get('/add-product',(req,res,next)=>
-{
-    console.log("in the another middle ware")
-    res.send('<form action=" /product" method="post"> <input type="text" name="title"> <button type="submit">Add Product</button> </form>');
+router.post('/product', (req, res) => {
+  console.log(req.body);
+  res.redirect('/');
+});
 
-   
-})
-routers.post('/product',(req,res,next)=>
-{
-    console.log(req.body)
-    
-    res.redirect('/');
-   
-})
-
-module.exports=routers;
+module.exports = router;
